@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_USER="lisa"
+      - MYSQL_DATABASE="clusters_db"
+      - MYSQL_PASSWORD="password"
+      - MYSQL_ROOT_PASSWORD="password"
+    volumes:
+      - /var/run/mysqld/:/var/run/mysqld/
+      - clusters_vol:/var/lib/mysql/
+    ports:
+      - 3307:3306
+
+volumes:
+  clusters_vol:
