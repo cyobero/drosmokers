@@ -4,8 +4,29 @@ from django.db import models
 
 
 class Strain(models.Model):
-    family = (('I', 'Indica', 'S', 'Sativa', 'H', 'Hybrid'))
+    family_choices = (
+        ('I', 'Indica'),
+        ('S', 'Sativa'),
+        ('H', 'Hybrid')
+    )
+    family = models.CharField(choices=family_choices, max_length=6)
     name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class TerpeneProfile(models.Model):
+    limonene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    pinenee = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    caryophillene = models.DecimalField(
+        decimal_places=2, max_digits=5, default=0.0)
+    myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+
+
+class Grower(models.Model):
+    name = models.CharField(max_length=256)
+    website = models.CharField(max_length=512, null=True)
 
 
 class Batch(models.Model):
@@ -13,11 +34,15 @@ class Batch(models.Model):
     harvest_date = models.DateField()
     package_date = models.DateField()
     test_date = models.DateField()
-    thc_content = models.DecimalField(decimal_places=2, max_digits=5)
-    cbd_content = models.DecimalField(decimal_places=2, max_digits=5)
+    thc_content = models.DecimalField(
+        decimal_places=2, max_digits=5, default=0.0)
+    cbd_content = models.DecimalField(
+        decimal_places=2, max_digits=5, default=0.0)
+    terpenes = models.ForeignKey(TerpeneProfile, on_delete=models.CASCADE)
+    grower = models.ForeignKey(Grower, null=True, on_delete=models.CASCADE)
 
 
-class Terpene(models.Model):
-    name = models.CharField(max_length=128)
-    amount = models.DecimalField(decimal_places=2, max_digits=5)
-    batch = models.ManyToManyField(Batch)
+class Rating(models.Model):
+    score_choices = ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5))
+    batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
+    score = models.IntegerField(choices=score_choices)

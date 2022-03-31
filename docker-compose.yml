@@ -10,7 +10,6 @@ services:
       - MYSQL_PASSWORD="password"
       - MYSQL_ROOT_PASSWORD="password"
     volumes:
-      - /var/run/mysqld/:/var/run/mysqld/
       - clusters_vol:/var/lib/mysql/
     ports:
       - 3307:3306
