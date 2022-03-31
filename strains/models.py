@@ -45,6 +45,7 @@ class Batch(models.Model):
         decimal_places=2, max_digits=5, default=0.0)
     terpenes = models.ForeignKey(TerpeneProfile, on_delete=models.CASCADE)
     grower = models.ForeignKey(Grower, null=True, on_delete=models.CASCADE)
+    image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return "%s by %s (%i)" % (self.strain.name, self.grower.name, self.id)
