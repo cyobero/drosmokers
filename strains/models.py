@@ -28,7 +28,10 @@ class TerpeneProfile(models.Model):
 
 class Grower(models.Model):
     name = models.CharField(max_length=256)
-    website = models.CharField(max_length=512, null=True)
+    website = models.CharField(max_length=512, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.name)
 
 
 class Batch(models.Model):
@@ -42,6 +45,9 @@ class Batch(models.Model):
         decimal_places=2, max_digits=5, default=0.0)
     terpenes = models.ForeignKey(TerpeneProfile, on_delete=models.CASCADE)
     grower = models.ForeignKey(Grower, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "%s by %s (%i)" % (self.strain.name, self.grower.name, self.id)
 
 
 class Rating(models.Model):
