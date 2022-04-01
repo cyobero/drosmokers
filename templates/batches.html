@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <th>id</th>
+        <th>strain</th>
+        <th>family</th>
+        <th>thc (%) </th>
+        <th>cbd (%) </th>
+        <th>myrcene (%)</th>
+        <th>limonene (%)</th>
+        <th>pinene (%)</th>
+        <th>caryophyllene</th>
+    </thead>
+
+    <tbody>
+        {% for batch in batches %}
+        <tr>
+            <td>{{ batch.id }}</td>
+            <td>{{ batch.strain.name }}</td>
+            <td>{{ batch.strain.family }}</td>
+            <td>{{ batch.thc_content  }}</td>
+            <td>{{ batch.cbd_content }}</td>
+            <td>{{ batch.terpenes.myrcene }}</td>
+            <td>{{ batch.terpenes.limonene }}</td>
+            <td>{{ batch.terpenes.pinene }}</td>
+            <td>{{ batch.terpenes.caryophillene }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
