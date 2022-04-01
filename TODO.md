@@ -1,2 +1,3 @@
-- create form page
-- add image field to batch table
+- add error message if strain name already in db
+- ~~create form page~~
+- ~~add image field to batch table~~

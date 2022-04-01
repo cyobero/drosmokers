@@ -9,6 +9,11 @@
         {{ form.as_table }}
         <input type="submit" value="Submit">
     </form>
-
 </div>
+{% if messages %}
+{% for message in messages %}
+<strong><p>{{ message }}</p></strong>
+{% endfor %}
+{% endif %}
+
 {% endblock %}
