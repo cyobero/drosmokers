@@ -10,7 +10,7 @@ class Strain(models.Model):
         ('H', 'Hybrid')
     )
     family = models.CharField(choices=family_choices, max_length=6)
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
         return str(self.name)
