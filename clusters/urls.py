@@ -22,7 +22,7 @@ from strains.views import strain_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new/strain', strain_form, name='strain-form')
+    path('new/strain', strain_form, name='strain-form'),
 ]
 
 if settings.DEBUG:

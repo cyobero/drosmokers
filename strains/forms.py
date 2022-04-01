@@ -10,7 +10,7 @@ class StrainForm(ModelForm):
 
     def clean_name(self):
         name = self.cleaned_data["name"].lower()
-        if Strain.objects.filter(name=name):
+        if Strain.objects.filter(name=name).exists():
             raise ValidationError(('The strain %(name)s has already been added.'),
                                   params={'name': name.title()}
                                   )

@@ -1,3 +1,6 @@
+- format validation error for StrainForm
+- create resource for retrieving batches and strains
+- style page
 - add error message if strain name already in db
 - ~~create form page~~
 - ~~add image field to batch table~~
