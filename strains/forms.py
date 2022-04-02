@@ -1,6 +1,6 @@
 from django.forms import ModelForm, ValidationError
 from django.contrib import messages
-from strains.models import Strain
+from strains.models import Strain, TerpeneProfile
 
 
 class StrainForm(ModelForm):
@@ -15,3 +15,10 @@ class StrainForm(ModelForm):
                                   params={'name': name.title()}
                                   )
         return name
+
+
+class TerpeneProfileForm(ModelForm):
+    class Meta:
+        model = TerpeneProfile
+        fields = ["limonene", "pinene",
+                  "caryophillene", "myrcene", "terpinene"]
