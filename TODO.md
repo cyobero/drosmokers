@@ -1,4 +1,5 @@
-- format batches page so that it shows picture cards of different batches
+- create new batch form page
+- ~~format batches page so that it shows picture cards of different batches~~
 - create UML diagram
 - add batch/lot_id field to Strain
 - create Notes Model?
