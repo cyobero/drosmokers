@@ -2,33 +2,32 @@
 {% load static %}
 
 {% block content %}
-<table class="table">
-    <thead>
-        <th>id</th>
-        <th>strain</th>
-        <th>family</th>
-        <th>thc (%) </th>
-        <th>cbd (%) </th>
-        <th>myrcene (%)</th>
-        <th>limonene (%)</th>
-        <th>pinene (%)</th>
-        <th>caryophyllene</th>
-    </thead>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"><h3>Batches</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            {% for batch in batches %}
+            <div class="card" style="width: 420px; height: 420px;">
+                <img class="card-img-top" src="{{ batch.image.url }}" alt="Card image cap">
+                <div class="card-title"><h5>{{ batch.strain.name.title }} by <small>{{ batch.grower.name }}</small></h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <p>THC: {{ batch.thc_content }}</p>
+                        <p>CBD: {{ batch.cbd_content }}</p>
+                        <p>Harvest date: {{ batch.harvest_date }}</p>
 
-    <tbody>
-        {% for batch in batches %}
-        <tr>
-            <td>{{ batch.id }}</td>
-            <td>{{ batch.strain.name }}</td>
-            <td>{{ batch.strain.family }}</td>
-            <td>{{ batch.thc_content  }}</td>
-            <td>{{ batch.cbd_content }}</td>
-            <td>{{ batch.terpenes.myrcene }}</td>
-            <td>{{ batch.terpenes.limonene }}</td>
-            <td>{{ batch.terpenes.pinene }}</td>
-            <td>{{ batch.terpenes.caryophillene }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
 {% endblock %}

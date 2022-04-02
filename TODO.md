@@ -1,9 +1,10 @@
+- format batches page so that it shows picture cards of different batches
 - create UML diagram
 - add batch/lot_id field to Strain
 - create Notes Model?
 - format validation error for StrainForm
 - ~~create resource for retrieving batches and strains~~
 - style page
-- add error message if strain name already in db
+- ~~add error message if strain name already in db~~
 - ~~create form page~~
 - ~~add image field to batch table~~
