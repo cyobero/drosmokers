@@ -1,10 +1,37 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from strains.forms import StrainForm, BatchForm
-from strains.models import Strain, Batch
+from strains.forms import StrainForm, BatchForm, TerpeneProfileForm
+from strains.models import Strain, Batch, TerpeneProfile
 
 
 # Create your views here.
+def terpenes_form(request, batch_id):
+    batch = Batch.objects.filter(id=int(batch_id))
+    if not batch.exists():
+        messages.error(request, "No batch found with id = {}".format(batch_id))
+    else:
+        batch = batch[0]
+
+    if request.method == "POST":
+        form = TerpeneProfileForm(request.POST)
+        if form.is_valid():
+            tp = {
+                "id": batch_id,
+                "limonene": form.cleaned_data["limonene"],
+                "pinene": form.cleaned_data["pinene"],
+                "caryophillene": form.cleaned_data["caryophillene"],
+                "myrcene": form.cleaned_data["myrcene"],
+                "terpinene": form.cleaned_data["terpinene"]
+            }
+
+            new_obj = TerpeneProfile(tp)
+            new_obj.save()
+            messages.success(request, "New terpene profile added!")
+        return render(request, "terpenes_form.html", {"form": form, "batch": batch})
+    form = TerpeneProfileForm
+    return render(request, "terpenes_form.html", {"form": form, "batch": batch})
+
+
 def batch_form(request):
     if request.method == "POST":
         form = BatchForm(request.POST)

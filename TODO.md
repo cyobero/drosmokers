@@ -1,7 +1,8 @@
+- create custom error page for batch id not found in /new/terpenes/<id>
 - create link to terpene profile page for each card
 - change input of date fields to calendar select
 - create terpene profile page 
-- create new batch form page
+- ~~create new batch form page~~
 - ~~format batches page so that it shows picture cards of different batches~~
 - create UML diagram
 - add batch/lot_id field to Strain
