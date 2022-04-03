@@ -1,10 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from strains.forms import StrainForm, BatchForm, TerpeneProfileForm
+from strains.forms import StrainForm, BatchForm, TerpeneProfileForm, GrowerForm
 from strains.models import Strain, Batch, TerpeneProfile
 
 
 # Create your views here.
+def grower_form(request):
+    if request.method == "POST":
+        form = GrowerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Grower '{}' successfull added".format(
+                form.cleaned_data["grower"]))
+        return render(request, "grower_form.html", {"form": form})
+    form = GrowerForm
+    return render(request, "grower_form.html", {"form": form})
+
+
 def terpenes_form(request, batch_id):
     batch = Batch.objects.filter(id=int(batch_id))
     if not batch.exists():

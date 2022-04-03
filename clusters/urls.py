@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from strains.views import strain_form, batches_view, batch_form, terpenes_form
+from strains.views import strain_form, batches_view, batch_form, terpenes_form, grower_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,7 @@ urlpatterns = [
     path('batches/', batches_view, name='batches'),
     path('new/batch', batch_form, name='batch-form'),
     path('new/terpenes/<int:batch_id>', terpenes_form, name='terpenes-form'),
+    path('new/grower', grower_form, name='grower-form')
 ]
 
 if settings.DEBUG:

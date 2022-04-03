@@ -1,3 +1,4 @@
+- ~~create grower form views, urls, and templates~~
 - create custom error page for batch id not found in /new/terpenes/<id>
 - create link to terpene profile page for each card
 - change input of date fields to calendar select
