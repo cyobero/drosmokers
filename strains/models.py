@@ -22,6 +22,7 @@ class TerpeneProfile(models.Model):
     caryophillene = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
     myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    humulene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
     terpinene = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
 
