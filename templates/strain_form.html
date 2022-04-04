@@ -9,9 +9,9 @@
 {% block content %}
 <div class="form-container">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <h4>Add New Strain</h4>
+        <div class="col-sm-4 col-md-4"></div>
+        <div class="col-sm-2 col-md-8">
+            <h4 class="h4">Add New Strain</h4>
             <div class="form-group">
                 <form method="post">{% csrf_token %}
                     {{ form.as_p }}
@@ -24,7 +24,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="col-md-2 col-sm-2"></div>
+        <div class="col-sm-2 col-md-2 col-sm-2"></div>
     </div>
 </div>
 

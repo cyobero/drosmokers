@@ -1,11 +1,8 @@
-div.header {
-    padding-top: 17px;
+body {
+    font-family: 'Anybody';
 }
 
-.form-group {
-    width: 420px;
-}
-
-.h2, .h2 {
-    font-size: 4rem;
+div.page-title {
+    padding-bottom: 5px;
+    font-size: 4.20rem;
 }
