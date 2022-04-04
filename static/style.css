@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Anybody';
+    background-color: #D0EEDC; 
 }
 
 div.page-title {
@@ -12,7 +13,7 @@ div.page-title {
 }
 
 div.card {
-    width: 420px;
+    width: 25rem;
     padding-bottom: 10px;
 }
 
