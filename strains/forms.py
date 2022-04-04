@@ -1,6 +1,7 @@
 from django.forms import ModelForm, ValidationError
 from django.contrib import messages
 from strains.models import Strain, TerpeneProfile
+from strains.models import Strain, Batch
 
 
 class StrainForm(ModelForm):
@@ -22,3 +23,10 @@ class TerpeneProfileForm(ModelForm):
         model = TerpeneProfile
         fields = ["limonene", "pinene",
                   "caryophillene", "myrcene", "terpinene"]
+
+
+class BatchForm(ModelForm):
+    class Meta:
+        model = Batch
+        fields = ["strain", "harvest_date", "package_date", "test_date", "thc_content",
+                  "cbd_content", "terpenes", "grower", "image"]

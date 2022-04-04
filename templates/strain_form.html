@@ -1,31 +1,104 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Add New Strain{% endblock %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'form_style.css' %}">
+{% endblock %}
+
 {% block content %}
-
-<div class="form-container">
+<div class="container">
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-
-            <h2>Enter New Strain</h2>
-            <div class='form-group' id='strain-form'>
-                <form method="post" class="form-group">
-                    {% csrf_token %}
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <div class="form-group">
+                <form method="post">{% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Submit" class="btn btn-primary">
                 </form>
             </div>
+            {% comment %}<form>{% endcomment %}
+                {% comment %}<!-- 2 column grid layout with text inputs for the first and last names -->{% endcomment %}
+                {% comment %}<div class="row mb-4">{% endcomment %}
+                    {% comment %}<div class="col">{% endcomment %}
+                        {% comment %}<div class="form-outline">{% endcomment %}
+                            {% comment %}<input type="text" id="form6Example1" class="form-control" />{% endcomment %}
+                            {% comment %}<label class="form-label" for="form6Example1">First name</label>{% endcomment %}
+                        {% comment %}</div>{% endcomment %}
+                    {% comment %}</div>{% endcomment %}
+                    {% comment %}<div class="col">{% endcomment %}
+                        {% comment %}<div class="form-outline">{% endcomment %}
+                            {% comment %}<input type="text" id="form6Example2" class="form-control" />{% endcomment %}
+                            {% comment %}<label class="form-label" for="form6Example2">Last name</label>{% endcomment %}
+                        {% comment %}</div>{% endcomment %}
+                    {% comment %}</div>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Text input -->{% endcomment %}
+                {% comment %}<div class="form-outline mb-4">{% endcomment %}
+                    {% comment %}<input type="text" id="form6Example3" class="form-control" />{% endcomment %}
+                    {% comment %}<label class="form-label" for="form6Example3">Company name</label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Text input -->{% endcomment %}
+                {% comment %}<div class="form-outline mb-4">{% endcomment %}
+                    {% comment %}<input type="text" id="form6Example4" class="form-control" />{% endcomment %}
+                    {% comment %}<label class="form-label" for="form6Example4">Address</label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Email input -->{% endcomment %}
+                {% comment %}<div class="form-outline mb-4">{% endcomment %}
+                    {% comment %}<input type="email" id="form6Example5" class="form-control" />{% endcomment %}
+                    {% comment %}<label class="form-label" for="form6Example5">Email</label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Number input -->{% endcomment %}
+                {% comment %}<div class="form-outline mb-4">{% endcomment %}
+                    {% comment %}<input type="number" id="form6Example6" class="form-control" />{% endcomment %}
+                    {% comment %}<label class="form-label" for="form6Example6">Phone</label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Message input -->{% endcomment %}
+                {% comment %}<div class="form-outline mb-4">{% endcomment %}
+                    {% comment %}<textarea class="form-control" id="form6Example7" rows="4"></textarea>{% endcomment %}
+                    {% comment %}<label class="form-label" for="form6Example7">Additional information</label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Checkbox -->{% endcomment %}
+                {% comment %}<div class="form-check d-flex justify-content-center mb-4">{% endcomment %}
+                    {% comment %}<input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />{% endcomment %}
+                    {% comment %}<label class="form-check-label" for="form6Example8"> Create an account? </label>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+
+                {% comment %}<!-- Submit button -->{% endcomment %}
+                {% comment %}<button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>{% endcomment %}
+            {% comment %}</form>{% endcomment %}
         </div>
     </div>
-    <div class="col-md-4"></div>
-
 </div>
-</div>
-{% if messages %}
-{% for message in messages %}
-<strong><p>{{ message }}</p></strong>
-{% endfor %}
-{% endif %}
+        {% comment %}<div class="form-container">{% endcomment %}
+            {% comment %}<div class="row">{% endcomment %}
+                {% comment %}<div class="col-md-4"></div>{% endcomment %}
+                {% comment %}<div class="col-md-4">{% endcomment %}
 
-{% endblock %}
+                    {% comment %}<h2>Enter New Strain</h2>{% endcomment %}
+                    {% comment %}<div class='form-group' id='strain-form'>{% endcomment %}
+                        {% comment %}<form method="post" class="form-group">{% endcomment %}
+                            {% comment %}{% csrf_token %}{% endcomment %}
+                            {% comment %}{{ form.as_p }}{% endcomment %}
+                            {% comment %}<input type="submit" value="Submit" class="btn btn-primary">{% endcomment %}
+                            {% comment %}</form>{% endcomment %}
+                        {% comment %}</div>{% endcomment %}
+                    {% comment %}</div>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+            {% comment %}<div class="col-md-4"></div>{% endcomment %}
+
+        </div>
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <strong><p>{{ message }}</p></strong>
+    {% endfor %}
+    {% endif %}
+
+    {% endblock %}
