@@ -2,12 +2,24 @@ from django.forms import ModelForm, ValidationError
 from django.contrib import messages
 from strains.models import Strain, TerpeneProfile
 from strains.models import Strain, Batch, Grower
+import django.forms as forms
 
 
 class StrainForm(ModelForm):
     class Meta:
+        family_choices = (
+            ('I', 'Indica'),
+            ('S', 'Sativa'),
+            ('H', 'Hybrid')
+        )
+
         model = Strain
         fields = ['name', 'family', ]
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'family': forms.Select(choices=family_choices, attrs={'class': 'form-control'})
+        }
 
     def clean_name(self):
         name = self.cleaned_data["name"].lower()
