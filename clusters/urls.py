@@ -18,15 +18,18 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from strains.views import strain_form, batches_view, batch_form, terpenes_form, grower_form
+import strains.views
+import clusters.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new/strain', strain_form, name='strain-form'),
-    path('batches/', batches_view, name='batches'),
-    path('new/batch', batch_form, name='batch-form'),
-    path('new/terpenes/<int:batch_id>', terpenes_form, name='terpenes-form'),
-    path('new/grower', grower_form, name='grower-form')
+    path('', clusters.views.index_view, name='index'),
+    path('new/strain', strains.views.strain_form, name='strain-form'),
+    path('batches/', strains.views.batches_view, name='batches'),
+    path('new/batch', strains.views.batch_form, name='batch-form'),
+    path('new/terpenes/<int:batch_id>',
+         strains.views.terpenes_form, name='terpenes-form'),
+    path('new/grower', strains.views.grower_form, name='grower-form')
 ]
 
 if settings.DEBUG:
