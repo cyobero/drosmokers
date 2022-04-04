@@ -1,11 +1,11 @@
+body {
+    font-family: 'Anybody';
+}
+
 div .form-group {
     width: 420px;
 }
 
 div {
     padding-top: 20px;
-}
-
-h2, h3, h4, h5 {
-    font-family: "Arimo"
 }

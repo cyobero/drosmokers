@@ -1,8 +1,23 @@
+
+
 body {
     font-family: 'Anybody';
 }
 
 div.page-title {
-    padding-bottom: 5px;
+    font-family: 'Anybody';
+    padding-left: 32px;
+    padding-bottom: 32px;
     font-size: 4.20rem;
+}
+
+div.card {
+    width: 420px;
+    padding-bottom: 10px;
+}
+
+div.card-title {
+    padding-left: 10px;
+    padding-top: 8px;
+    background-color: #D6D8D7;
 }

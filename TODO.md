@@ -1,3 +1,4 @@
+- add grower page
 - add navigation bar
 - add default image for batches with no image
 - ~~create grower form views, urls, and templates~~

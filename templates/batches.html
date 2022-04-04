@@ -3,30 +3,30 @@
 
 {% block content %}
 <div class="page-title">
-    Batches
+    Batches I've Smoked
 </div>
 
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-            {% for batch in batches %}
-            <div class="card" style="width: 420px; height: 420px;">
-                <img class="card-img-top" src="{{ batch.image.url }}" alt="Card image cap">
-                <div class="card-title"><h5>{{ batch.strain.name.title }} by <small>{{ batch.grower.name }}</small></h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                        <p>THC: {{ batch.thc_content }}</p>
-                        <p>CBD: {{ batch.cbd_content }}</p>
-                        <p>Harvest date: {{ batch.harvest_date }}</p>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        {% for batch in batches %}
+        <div class="card">
+            <img class="card-img-top" src="{{ batch.image.url }}" alt="Card image cap">
+            <div class="card-title"><h5>{{ batch.strain.name.title }} by <small>{{ batch.grower.name }}</small></h5></div>
+            <div class="card-body">
+                <p class="card-text">
+                <p>THC: {{ batch.thc_content }}</p>
+                <p>CBD: {{ batch.cbd_content }}</p>
+                <p>Harvest date: {{ batch.harvest_date }}</p>
 
-                    </div>
-                </div>
-
-                {% endfor %}
             </div>
-
         </div>
-
+        <br>
+        {% endfor %}
     </div>
+
+</div>
+
+</div>
 </div>
 {% endblock %}
