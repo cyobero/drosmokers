@@ -36,7 +36,7 @@ def terpenes_form(request, batch_id):
                 "terpinene": form.cleaned_data["terpinene"]
             }
 
-            new_obj = TerpeneProfile(tp)
+            new_obj = TerpeneProfile(tp['id'])
             new_obj.save()
             messages.success(request, "New terpene profile added!")
         return render(request, "terpenes_form.html", {"form": form, "batch": batch})

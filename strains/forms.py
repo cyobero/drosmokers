@@ -22,7 +22,7 @@ class TerpeneProfileForm(ModelForm):
     class Meta:
         model = TerpeneProfile
         fields = ["limonene", "pinene",
-                  "caryophillene", "myrcene", "terpinene"]
+                  "caryophillene", "myrcene", "terpinene", "humulene"]
 
 
 class BatchForm(ModelForm):
