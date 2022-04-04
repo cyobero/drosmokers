@@ -2,6 +2,10 @@ div.header {
     padding-top: 17px;
 }
 
-.h2, h2 {
+.form-group {
+    width: 420px;
+}
+
+.h2, .h2 {
     font-size: 4rem;
 }
