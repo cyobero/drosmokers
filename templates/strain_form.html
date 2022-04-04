@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
 {% block title %}Add New Strain{% endblock %}
 
@@ -11,8 +11,9 @@
     <div class="row">
         <div class="col-sm-4 col-md-4"></div>
         <div class="col-sm-2 col-md-8">
-            <h4 class="h4">Add New Strain</h4>
             <div class="form-group">
+                <h4 class="h4">Add New Strain</h4>
+
                 <form method="post">{% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Submit" class="btn btn-primary">

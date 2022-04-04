@@ -1,5 +1,15 @@
 body {
-    font-family: 'Anybody';
+    background-color: #D0EEDC;
+    font-family: 'Anybody'; }
+
+div.form-group {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    border: 0.5px solid;
+    box-shadow: 5px 8px #888888;
 }
 
 div .form-group {
