@@ -36,6 +36,15 @@ class TerpeneProfileForm(ModelForm):
         fields = ["limonene", "pinene",
                   "caryophillene", "myrcene", "terpinene", "humulene"]
 
+        widgets = {
+            "limonene": forms.NumberInput(attrs={"class": "form-control"}),
+            "pinene": forms.NumberInput(attrs={"class": "form-control"}),
+            "caryophillene": forms.NumberInput(attrs={"class": "form-control"}),
+            "myrcene": forms.NumberInput(attrs={"class": "form-control"}),
+            "terpinene": forms.NumberInput(attrs={"class": "form-control"}),
+            "humulene": forms.NumberInput(attrs={"class": "form-control"})
+        }
+
 
 class BatchForm(ModelForm):
     class Meta:

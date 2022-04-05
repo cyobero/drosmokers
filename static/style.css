@@ -1,5 +1,4 @@
 
-
 body {
     font-family: 'Anybody';
     background-color: #D0EEDC; 
@@ -14,11 +13,19 @@ div.page-title {
 
 div.card {
     width: 25rem;
+    padding-top 10px;
     padding-bottom: 10px;
+    border: 1px solid;
+    box-shadow: 5px 8px #8888;
 }
 
 div.card-title {
     padding-left: 10px;
-    padding-top: 8px;
+    padding-top: 10px;
     background-color: #D6D8D7;
+}
+
+div.card-body button {
+    background-color: #FFBA2C;
+    border: 0.5px solid;
 }
