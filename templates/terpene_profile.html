@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block title %}Terpene Profile{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'terp_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="row">
+        <div align="center" class="page-title">Terpene Profile for {{ terp.get_batch.strain.name }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <div class="card">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -26,6 +26,10 @@ class TerpeneProfile(models.Model):
     terpinene = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
 
+    def get_batch(self):
+        obj = Batch.objects.get(id=self.id)
+        return obj
+
 
 class Grower(models.Model):
     name = models.CharField(max_length=256)

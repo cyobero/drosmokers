@@ -5,6 +5,11 @@ from strains.models import Strain, Batch, TerpeneProfile
 
 
 # Create your views here.
+def terpenes_view(request, batch_id):
+    terp = get_object_or_404(TerpeneProfile, id=int(batch_id))
+    return render(request, "terpene_profile.html", {"terp": terp})
+
+
 def grower_form(request):
     if request.method == "POST":
         form = GrowerForm(request.POST)

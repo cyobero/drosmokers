@@ -29,7 +29,9 @@ urlpatterns = [
     path('new/batch', strains.views.batch_form, name='batch-form'),
     path('new/terpenes/<int:batch_id>',
          strains.views.terpenes_form, name='terpenes-form'),
-    path('new/grower', strains.views.grower_form, name='grower-form')
+    path('new/grower', strains.views.grower_form, name='grower-form'),
+    path('terpenes/<int:batch_id>',
+         strains.views.terpenes_view, name='terpene-profile')
 ]
 
 if settings.DEBUG:
