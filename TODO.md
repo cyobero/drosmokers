@@ -1,3 +1,4 @@
+- style new batch form page
 - add grower page
 - add navigation bar
 - add default image for batches with no image

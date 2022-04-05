@@ -50,7 +50,17 @@ class BatchForm(ModelForm):
     class Meta:
         model = Batch
         fields = ["strain", "harvest_date", "package_date", "test_date", "thc_content",
-                  "cbd_content", "terpenes", "grower", "image"]
+                  "cbd_content", "grower", "image"]
+
+        widgets = {
+            "strain": forms.Select(attrs={"class": "form-control"}),
+            "harvest_date": forms.DateInput(attrs={"class": "form-control"}),
+            "package_date": forms.DateInput(attrs={"class": "form-control"}),
+            "test_date": forms.DateInput(attrs={"class": "form-control"}),
+            "thc_content": forms.NumberInput(attrs={"class": "form-control"}),
+            "cbd_content": forms.NumberInput(attrs={"class": "form-control"}),
+            "grower": forms.Select(attrs={"class": "form-control"}),
+        }
 
 
 class GrowerForm(ModelForm):
