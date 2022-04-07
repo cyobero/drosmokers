@@ -32,8 +32,13 @@ div.card-body button {
 
 nav.navbar.navbar-dark.fixed-top {
     background-color: #275D3B;
-    padding-top: 0px;
 }
+
+.navbar {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
 
 .navbar-dark .navbar-brand {
     color: #FECA54;
@@ -42,6 +47,7 @@ nav.navbar.navbar-dark.fixed-top {
 a.navbar-brand {
     font-size: x-large;
     padding-left: 0.6rem;
+    padding-bottom: 0px;
 }
 
 div.cards-container {
