@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Anybody';
-    background-color: #75C46B; 
+    background-color: 	#a9ffc4; 
 }
 
 div.page-title {
@@ -20,10 +20,12 @@ div.card {
 }
 
 div.card-title {
+    color: #017c9d;
     padding-left: 10px;
     padding-top: 10px;
     background-color: #D6D8D7;
 }
+
 
 div.card-body button {
     background-color: #FFBA2C;
@@ -31,7 +33,7 @@ div.card-body button {
 }
 
 nav.navbar.navbar-dark.fixed-top {
-    background-color: #275D3B;
+    background-color: 		#414f5c;
 }
 
 .navbar {
@@ -41,11 +43,11 @@ nav.navbar.navbar-dark.fixed-top {
 
 
 .navbar-dark .navbar-brand {
-    color: #FECA54;
+    color: 	#637cff;
 }
 
 a.navbar-brand {
-    font-size: x-large;
+    font-size: large;
     padding-left: 0.6rem;
     padding-bottom: 0px;
 }
