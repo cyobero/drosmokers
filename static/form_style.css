@@ -12,10 +12,10 @@ div.form-group {
     box-shadow: 5px 8px #8888;
 }
 
-div .form-group {
+div.form-group {
     width: 500px;
 }
 
-div {
-    padding-top: 20px;
+div.form-container {
+    padding-top: 5rem;
 }
