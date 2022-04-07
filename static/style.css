@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Anybody';
-    background-color: #D0EEDC; 
+    background-color: #75C46B; 
 }
 
 div.page-title {
@@ -30,6 +30,20 @@ div.card-body button {
     border: 0.5px solid;
 }
 
-nav.navbar.navbar-dark.bg-dark.fixed-top {
-    height: 38px;
+nav.navbar.navbar-dark.fixed-top {
+    background-color: #275D3B;
+    padding-top: 0px;
+}
+
+.navbar-dark .navbar-brand {
+    color: #FECA54;
+}
+
+a.navbar-brand {
+    font-size: x-large;
+    padding-left: 0.6rem;
+}
+
+div.cards-container {
+    padding-top: 5.5rem;
 }
