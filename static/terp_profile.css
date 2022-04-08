@@ -1,0 +1,9 @@
+div.profile-container {
+    padding-top: 5.5rem;
+    padding-left: 5.5rem;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+}

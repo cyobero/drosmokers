@@ -11,14 +11,14 @@
 {% block content %}
 <div class="profile-container">
     <div class="row">
-        <div align="center" class="page-title">Terpene Profile for {{ terp.get_batch.strain.name }}</div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-            <div class="card">
-            </div>
+        <div class="col-lg-3 col-md-3">
+            <img class="profile-img" src="{{ terp.get_batch.image.url }}">
+        </div>
+        <div class="col-lg-9 col-md-9">
+            <h2 class="display-2">
+                {{ terp.get_batch.strain.name }},
+                <small class="display-6">{{terp.get_batch.grower.name}}, {{terp.get_batch.harvest_date }}</small>
+            </h2>
         </div>
     </div>
 </div>
