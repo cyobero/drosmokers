@@ -16,7 +16,10 @@
                     <p>THC: {{ batch.thc_content }}%</p>
                     <p>CBD: {{ batch.cbd_content }}%</p>
                     <p>Harvest Date: {{ batch.harvest_date }}</p>
-                    <button class="btn"><a href="{% url 'terpene-profile' batch_id=batch.id %}">Terpenes</a></button>
+
+                    <form action="{% url 'terpene-profile' batch_id=batch.id %}">
+                        <input type="submit" class="btn terpens-button form-control" value="Terpenes"></input>
+                    </form>
                 </div>
             </div>
             <br>

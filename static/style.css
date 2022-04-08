@@ -61,3 +61,14 @@ a.navbar-brand {
 div.cards-container {
     padding-top: 5.5rem;
 }
+
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    background-color: #FAB244;
+    border-radius: 1.5rem;
+}
