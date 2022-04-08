@@ -1,7 +1,11 @@
 
 body {
     font-family: 'Anybody';
+<<<<<<< HEAD
     background-color: #75C46B; 
+=======
+    background-color: 	#a9ffc4; 
+>>>>>>> main
 }
 
 div.page-title {
@@ -20,10 +24,12 @@ div.card {
 }
 
 div.card-title {
+    color: #017c9d;
     padding-left: 10px;
     padding-top: 10px;
     background-color: #D6D8D7;
 }
+
 
 div.card-body button {
     background-color: #FFBA2C;
@@ -31,7 +37,11 @@ div.card-body button {
 }
 
 nav.navbar.navbar-dark.fixed-top {
+<<<<<<< HEAD
     background-color: #275D3B;
+=======
+    background-color: 		#414f5c;
+>>>>>>> main
 }
 
 .navbar {
@@ -41,11 +51,19 @@ nav.navbar.navbar-dark.fixed-top {
 
 
 .navbar-dark .navbar-brand {
+<<<<<<< HEAD
     color: #FECA54;
 }
 
 a.navbar-brand {
     font-size: x-large;
+=======
+    color: 	#637cff;
+}
+
+a.navbar-brand {
+    font-size: large;
+>>>>>>> main
     padding-left: 0.6rem;
     padding-bottom: 0px;
 }
