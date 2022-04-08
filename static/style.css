@@ -1,11 +1,7 @@
 
 body {
     font-family: 'Anybody';
-<<<<<<< HEAD
-    background-color: #75C46B; 
-=======
     background-color: 	#a9ffc4; 
->>>>>>> main
 }
 
 div.page-title {
@@ -37,11 +33,7 @@ div.card-body button {
 }
 
 nav.navbar.navbar-dark.fixed-top {
-<<<<<<< HEAD
-    background-color: #275D3B;
-=======
     background-color: 		#414f5c;
->>>>>>> main
 }
 
 .navbar {
@@ -57,13 +49,11 @@ nav.navbar.navbar-dark.fixed-top {
 
 a.navbar-brand {
     font-size: x-large;
-=======
     color: 	#637cff;
 }
 
 a.navbar-brand {
     font-size: large;
->>>>>>> main
     padding-left: 0.6rem;
     padding-bottom: 0px;
 }
