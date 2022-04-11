@@ -32,7 +32,7 @@ def terpenes_form(request, batch_id):
                 "id": batch_id,
                 "limonene": form.cleaned_data["limonene"],
                 "pinene": form.cleaned_data["pinene"],
-                "caryophillene": form.cleaned_data["caryophillene"],
+                "caryophyllene": form.cleaned_data["caryophyllene"],
                 "myrcene": form.cleaned_data["myrcene"],
                 "terpinene": form.cleaned_data["terpinene"],
                 "humulene": form.cleaned_data["humulene"]

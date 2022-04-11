@@ -34,12 +34,12 @@ class TerpeneProfileForm(ModelForm):
     class Meta:
         model = TerpeneProfile
         fields = ["limonene", "pinene",
-                  "caryophillene", "myrcene", "terpinene", "humulene"]
+                  "caryophyllene", "myrcene", "terpinene", "humulene"]
 
         widgets = {
             "limonene": forms.NumberInput(attrs={"class": "form-control"}),
             "pinene": forms.NumberInput(attrs={"class": "form-control"}),
-            "caryophillene": forms.NumberInput(attrs={"class": "form-control"}),
+            "caryophyllene": forms.NumberInput(attrs={"class": "form-control"}),
             "myrcene": forms.NumberInput(attrs={"class": "form-control"}),
             "terpinene": forms.NumberInput(attrs={"class": "form-control"}),
             "humulene": forms.NumberInput(attrs={"class": "form-control"})

@@ -19,7 +19,7 @@ class Strain(models.Model):
 class TerpeneProfile(models.Model):
     limonene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
     pinene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    caryophillene = models.DecimalField(
+    caryophyllene = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
     myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
     humulene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
