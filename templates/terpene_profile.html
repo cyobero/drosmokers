@@ -19,6 +19,7 @@
 
             <div class="profile-title">
                 <h2 class="display-2">{{ terp.get_batch.strain.name }}</h2>
+                <h5 class="h5"><strong>THC:</strong> {{ terp.get_batch.thc_content }}%</h5>
                 <h5 class="h5">{{ terp.get_batch.grower.name }}, Harvest Date: {{ terp.get_batch.harvest_date }}</h5>
             </div>
 
@@ -33,11 +34,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ terp.myrcene }} (%)</td>
-                            <td>{{ terp.caryophyllene }} (%)</td>
-                            <td>{{ terp.pinene }} (%)</td>
-                            <td>{{ terp.limonene }} (%)</td>
-                            <td>{{ terp.humulene }} (%)</td>
+                            <td>{{ terp.myrcene }} %</td>
+                            <td>{{ terp.caryophyllene }} %</td>
+                            <td>{{ terp.pinene }} %</td>
+                            <td>{{ terp.limonene }} %</td>
+                            <td>{{ terp.humulene }} %</td>
                         </tr>
                     </tbody>
                 </table>
