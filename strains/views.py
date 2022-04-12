@@ -23,23 +23,20 @@ def grower_form(request):
 
 
 def terpenes_form(request, batch_id):
-    batch = Batch.objects.filter(id=int(batch_id))
+    batch = get_object_or_404(Batch, id=int(batch_id))
 
     if request.method == "POST":
         form = TerpeneProfileForm(request.POST)
         if form.is_valid():
-            tp = {
-                "id": batch_id,
-                "limonene": form.cleaned_data["limonene"],
-                "pinene": form.cleaned_data["pinene"],
-                "caryophyllene": form.cleaned_data["caryophyllene"],
-                "myrcene": form.cleaned_data["myrcene"],
-                "terpinene": form.cleaned_data["terpinene"],
-                "humulene": form.cleaned_data["humulene"]
-            }
+            profile = TerpeneProfile(batch=batch,
+                                     limonene=form.cleaned_data["limonene"],
+                                     pinene=form.cleaned_data["pinene"],
+                                     caryophyllene=form.cleaned_data["caryophyllene"],
+                                     myrcene=form.cleaned_data["myrcene"],
+                                     humulene=form.cleaned_data["humulene"],
+                                     terpinene=form.cleaned_data["terpinene"])
+            profile.save()
 
-            new_obj = TerpeneProfile(tp['id'])
-            new_obj.save()
             messages.success(request, "New terpene profile added!")
         return render(request, "terpenes_form.html", {"form": form, "batch": batch})
     form = TerpeneProfileForm

@@ -16,21 +16,6 @@ class Strain(models.Model):
         return str(self.name)
 
 
-class TerpeneProfile(models.Model):
-    limonene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    pinene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    caryophyllene = models.DecimalField(
-        decimal_places=2, max_digits=5, default=0.0)
-    myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    humulene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    terpinene = models.DecimalField(
-        decimal_places=2, max_digits=5, default=0.0)
-
-    def get_batch(self):
-        obj = Batch.objects.get(id=self.id)
-        return obj
-
-
 class Grower(models.Model):
     name = models.CharField(max_length=256)
     website = models.CharField(max_length=512, blank=True, null=True)
@@ -48,13 +33,28 @@ class Batch(models.Model):
         decimal_places=2, max_digits=5, default=0.0)
     cbd_content = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
-    terpenes = models.ForeignKey(TerpeneProfile, on_delete=models.CASCADE)
     grower = models.ForeignKey(Grower, null=True, on_delete=models.CASCADE)
     image = models.ImageField(blank=True, null=True,
                               default='default_bud.jpeg')
 
     def __str__(self):
         return "%s by %s (%i)" % (self.strain.name, self.grower.name, self.id)
+
+
+class TerpeneProfile(models.Model):
+    batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
+    limonene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    pinene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    caryophyllene = models.DecimalField(
+        decimal_places=2, max_digits=5, default=0.0)
+    myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    humulene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    terpinene = models.DecimalField(
+        decimal_places=2, max_digits=5, default=0.0)
+
+    def get_batch(self):
+        obj = Batch.objects.get(id=self.id)
+        return obj
 
 
 class Rating(models.Model):
