@@ -46,15 +46,14 @@ nav.navbar.navbar-dark.fixed-top {
     color: #FECA54;
 }
 
-a.navbar-brand {
-    font-size: x-large;
-    color: 	#637cff;
-}
 
 a.navbar-brand {
     font-size: large;
-    padding-left: 0.6rem;
+    padding-left: 1rem;
     padding-bottom: 0px;
+    padding-top: 0px;
+    margin-right: 10px;
+    border-right-width: 10px;
 }
 
 div.cards-container {
