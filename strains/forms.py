@@ -60,6 +60,7 @@ class BatchForm(ModelForm):
             "thc_content": forms.NumberInput(attrs={"class": "form-control"}),
             "cbd_content": forms.NumberInput(attrs={"class": "form-control"}),
             "grower": forms.Select(attrs={"class": "form-control"}),
+            "image": forms.FileInput(attrs={"class": "form-control"})
         }
 
 

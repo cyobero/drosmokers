@@ -12,10 +12,18 @@
         <div class="form-container">
             <div class="form-group">
                 <h4 class="h4">Add New Batch</h4>
-                <form method="post">{% csrf_token %}
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" class="btn btn-primary" value="Submit">
                 </form>
+                {% if messages %}
+                <div class="form-messages">
+                    {% for message in messages %}
+                    <p class="leading"><strong>{{ message }}</strong></p>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
 

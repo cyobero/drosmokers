@@ -34,8 +34,7 @@ class Batch(models.Model):
     cbd_content = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
     grower = models.ForeignKey(Grower, null=True, on_delete=models.CASCADE)
-    image = models.ImageField(blank=True, null=True,
-                              default='default_bud.jpeg')
+    image = models.ImageField(upload_to="images/", default="default_bud.jpeg")
 
     def __str__(self):
         return "%s by %s (%i)" % (self.strain.name, self.grower.name, self.id)

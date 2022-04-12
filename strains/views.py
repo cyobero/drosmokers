@@ -46,10 +46,11 @@ def terpenes_form(request, batch_id):
 
 def batch_form(request):
     if request.method == "POST":
-        form = BatchForm(request.POST)
+        form = BatchForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, "Batch successfully added!")
+            messages.success(request, "Batch successfully added! image url:%s" %
+                             form.cleaned_data["image"])
         return render(request, "batch_form.html", {"form": form})
     form = BatchForm()
     return render(request, "batch_form.html", {"form": form})
