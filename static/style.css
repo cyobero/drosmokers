@@ -33,7 +33,7 @@ div.card-body button {
 }
 
 nav.navbar.navbar-dark.fixed-top {
-    background-color: 		#414f5c;
+    background-color: #414f5c;
 }
 
 .navbar {
@@ -69,4 +69,13 @@ div.cards-container {
 .btn {
     background-color: #FAB244;
     border-radius: 1.5rem;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: #414f5c;
+    color: white;
+}
+
+.dropdown-item {
+    color: white;
 }
