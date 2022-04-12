@@ -57,7 +57,7 @@ def batch_form(request):
 
 
 def batches_view(request):
-    batches = Batch.objects.all()
+    batches = Batch.objects.all().order_by('-id')
     return render(request, "batches.html", {"batches": batches})
 
 
