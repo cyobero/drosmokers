@@ -42,14 +42,15 @@ class Batch(models.Model):
 
 class TerpeneProfile(models.Model):
     batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
-    limonene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    pinene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+    limonene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
+    pinene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
     caryophyllene = models.DecimalField(
-        decimal_places=2, max_digits=5, default=0.0)
-    myrcene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    humulene = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
+        decimal_places=2, max_digits=6, default=0.0)
+    myrcene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
+    humulene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
     terpinene = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
+    linalool = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
 
     def get_batch(self):
         obj = Batch.objects.get(id=self.id)
