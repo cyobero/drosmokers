@@ -13,7 +13,20 @@
         <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{% url 'batches' %}">Batches</a>
+            <li class="nav-item"><a class="nav-item nav-link active" href="{% url 'batches' %}">Batches</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                             role="button"
+                                                             data-toggle="dropdown"
+                                                             aria-haspopup="true"
+                                                             aria-expanded="false"> New
+                </a>
+                <div class="dropdown dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'strain-form' %}">Strain</a>
+                    <a class="dropdown-item" href="{% url 'batch-form' %}">Batch</a>
+                </div>
+            </li>
+
         </div>
     </div>
 </nav>
