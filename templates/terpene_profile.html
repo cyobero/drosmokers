@@ -9,18 +9,22 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="profile-container">
     <div class="row">
         <div class="col-lg-4">
-            <img src="{{ terp.get_batch.image.url }}" class="profile-img">
+            {% if not terps %}
+            <h4>not found</h4>
+            {% else %}
+            <img src="{{ terps.get_batch.image.url }}" class="profile-img">
         </div>
 
         <div class="col-lg-8">
 
             <div class="profile-title">
-                <h2 class="display-2">{{ terp.get_batch.strain.name }}</h2>
-                <h5 class="h5"><strong>THC:</strong> {{ terp.get_batch.thc_content }}%</h5>
-                <h5 class="h5">{{ terp.get_batch.grower.name }}, Harvest Date: {{ terp.get_batch.harvest_date }}</h5>
+                <h2 class="display-2">{{ terps.get_batch.strain.name }}</h2>
+                <h5 class="h5"><strong>THC:</strong> {{ terps.get_batch.thc_content }}%</h5>
+                <h5 class="h5">{{ terps.get_batch.grower.name }}, Harvest Date: {{ terps.get_batch.harvest_date }}</h5>
             </div>
 
             <div class="terp-profile-table">
@@ -35,18 +39,18 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ terp.myrcene }} %</td>
-                            <td>{{ terp.caryophyllene }} %</td>
-                            <td>{{ terp.pinene }} %</td>
-                            <td>{{ terp.limonene }} %</td>
-                            <td>{{ terp.humulene }} %</td>
-                            <td>{{ terp.linalool }} %</td>
+                            <td>{{ terps.myrcene }} %</td>
+                            <td>{{ terps.caryophyllene }} %</td>
+                            <td>{{ terps.pinene }} %</td>
+                            <td>{{ terps.limonene }} %</td>
+                            <td>{{ terps.humulene }} %</td>
+                            <td>{{ terps.linalool }} %</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
