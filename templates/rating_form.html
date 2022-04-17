@@ -1,0 +1,27 @@
+{% extends 'strain_form.html' %}
+{% load static %}
+
+{% block title %}Rating{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <div class="form-container">
+            <form method="post" class="form-inline">{% csrf_token %}
+                <h4 class="form-title">Rate</h4>
+                <div class="form-group">
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </form>
+        </div>
+        <br>
+        {% if messages %}
+        {% for message in messages %}
+        <strong>{{ message }}</strong>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

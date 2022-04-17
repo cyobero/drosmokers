@@ -60,4 +60,4 @@ class TerpeneProfile(models.Model):
 class Rating(models.Model):
     score_choices = ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5))
     batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
-    score = models.IntegerField(choices=score_choices)
+    score = models.IntegerField(choices=score_choices, null=True, blank=False)
