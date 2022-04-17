@@ -13,10 +13,11 @@
 <div class="profile-container">
     <div class="row">
         <div class="col-lg-4">
-            {% if not terps %}
-            <h4>not found</h4>
+            {% if not terp %}
+            <h4 class="h4">Terpene Profile for batch ID: {{ batch_id }} does not
+                exist</h4>
             {% else %}
-            <img src="{{ terps.get_batch.image.url }}" class="profile-img">
+            <img src="{{ terp.get_batch.image.url }}" class="profile-img">
         </div>
 
         <div class="col-lg-8">
@@ -49,6 +50,7 @@
                     </tbody>
                 </table>
             </div>
+            {% endif %}
         </div>
         {% endif %}
     </div>
