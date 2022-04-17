@@ -1,10 +1,21 @@
+from strains.models import Strain, Batch, TerpeneProfile
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from strains.forms import StrainForm, BatchForm, TerpeneProfileForm, GrowerForm
-from strains.models import Strain, Batch, TerpeneProfile
+from strains.forms import StrainForm, BatchForm, TerpeneProfileForm, GrowerForm, RatingForm
 
 
 # Create your views here.
+def rating_form(request):
+    if request.method == "POST":
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Rating successfully added!")
+        return redirect("index")
+    form = RatingForm
+    return render(request, "rating_form.html", {"form": form})
+
+
 def terpenes_view(request, batch_id):
     terps = TerpeneProfile.objects.filter(id=int(batch_id))
     return render(request, "terpene_profile.html", {"terps": terps})

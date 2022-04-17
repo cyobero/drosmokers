@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'clusters_db',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '172.18.0.1',
+        'HOST': '172.17.0.1',
         'PORT': 3306
     }
 }

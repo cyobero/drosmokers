@@ -1,8 +1,14 @@
 from django.forms import ModelForm, ValidationError
 from django.contrib import messages
 from strains.models import Strain, TerpeneProfile
-from strains.models import Strain, Batch, Grower
+from strains.models import Strain, Batch, Grower, Rating
 import django.forms as forms
+
+
+class RatingForm(ModelForm):
+    class Meta:
+        model = Rating
+        fields = ["batch", "score"]
 
 
 class StrainForm(ModelForm):
