@@ -15,7 +15,7 @@
         <div class="col-lg-4">
             {% if not terp %}
             <h4 class="h4">Terpene Profile for batch ID: {{ batch_id }} does not
-                exist</h4>
+                exist.<br> <small>Create a new one <a href="#">here</a></small></h4>
             {% else %}
             <img src="{{ terp.get_batch.image.url }}" class="profile-img">
         </div>
@@ -52,7 +52,6 @@
             </div>
             {% endif %}
         </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
