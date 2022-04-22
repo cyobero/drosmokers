@@ -11,7 +11,8 @@ def rating_form(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Rating successfully added!")
-        return redirect("index")
+            return redirect("success")
+        return render(request, "rating_form.html", {"form": form})
     form = RatingForm
     return render(request, "rating_form.html", {"form": form})
 

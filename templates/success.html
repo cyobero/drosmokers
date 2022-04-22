@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Success{% endblock %}
 
+{% block styles %}
+<meta http-equiv="refresh" content="3; url='{% url 'index' %}'" />
+{% endblock %}
+
 {% block content %}
-<h3>Success!</h3>
+{% if messages %}
+{% for message in messages %}
+<strong>{{message}}</strong>
+{% endfor %}
+{% endif %}
+<h2>Much Success!</h2>
 {% endblock %}
