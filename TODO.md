@@ -1,12 +1,15 @@
-- style new batch form page
+- Show default terp content in Terpene form if it exists
+- Show dropdown of Batch objects for Terpene form instead of using the `id` parameter in the
+  URL path to retrieve `Batch` with `id`
+- ~~style new batch form page~~
 - add grower page
-- add navigation bar
+- ~~add navigation bar~~
 - add default image for batches with no image
 - ~~create grower form views, urls, and templates~~
 - create custom error page for batch id not found in /new/terpenes/<id>
 - create link to terpene profile page for each card
 - change input of date fields to calendar select
-- create terpene profile page 
+- ~~create terpene profile page ~~
 - ~~create new batch form page~~
 - ~~format batches page so that it shows picture cards of different batches~~
 - create UML diagram
