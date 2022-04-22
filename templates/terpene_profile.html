@@ -17,15 +17,15 @@
             <h4 class="h4">Terpene Profile for batch ID: {{ batch_id }} does not
                 exist.<br> <small>Create a new one <a href="#">here</a></small></h4>
             {% else %}
-            <img src="{{ terp.get_batch.image.url }}" class="profile-img">
+            <img src="{{ terp.0.get_batch.image.url }}" class="profile-img">
         </div>
 
         <div class="col-lg-8">
 
             <div class="profile-title">
-                <h2 class="display-2">{{ terps.get_batch.strain.name }}</h2>
-                <h5 class="h5"><strong>THC:</strong> {{ terps.get_batch.thc_content }}%</h5>
-                <h5 class="h5">{{ terps.get_batch.grower.name }}, Harvest Date: {{ terps.get_batch.harvest_date }}</h5>
+                <h2 class="display-2">{{ terp.0.get_batch.strain.name }}</h2>
+                <h5 class="h5"><strong>THC:</strong> {{ terp.0.get_batch.thc_content }}%</h5>
+                <h5 class="h5">{{ terp.0.get_batch.grower.name }}, Harvest Date: {{terp.0.get_batch.harvest_date }}</h5>
             </div>
 
             <div class="terp-profile-table">
@@ -40,12 +40,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ terps.myrcene }} %</td>
-                            <td>{{ terps.caryophyllene }} %</td>
-                            <td>{{ terps.pinene }} %</td>
-                            <td>{{ terps.limonene }} %</td>
-                            <td>{{ terps.humulene }} %</td>
-                            <td>{{ terps.linalool }} %</td>
+                            <td>{{ terp.0.myrcene }} %</td>
+                            <td>{{ terp.0.caryophyllene }} %</td>
+                            <td>{{ terp.0.pinene }} %</td>
+                            <td>{{ terp.0.limonene }} %</td>
+                            <td>{{ terp.0.humulene }} %</td>
+                            <td>{{ terp.0.linalool }} %</td>
                         </tr>
                     </tbody>
                 </table>
