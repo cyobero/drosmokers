@@ -50,6 +50,7 @@ def terpenes_form(request, batch_id):
             profile.save()
 
             messages.success(request, "New terpene profile added!")
+            return redirect("success")
         return render(request, "terpenes_form.html", {"form": form, "batch": batch})
     form = TerpeneProfileForm
     return render(request, "terpenes_form.html", {"form": form, "batch": batch,

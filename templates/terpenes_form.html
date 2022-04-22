@@ -1,15 +1,15 @@
-{% extends 'batch_form.html' %}
+{% extends 'strain_form.html' %}
 {% block title %}New Terpene Profile {% endblock %}
 {% block content %}
-<div class="container">
+<div class="form-container">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-8">
             <div class="form-group">
                 {% if batch %}
                 <form method="post" class="form">{% csrf_token %}
-                    <h5>Terpene Profile for {{ batch.0.strain.name }} by
-                        {{batch.0.grower.name }} (Harvest Date: {{ batch.0.harvest_date }})</h5>
+                    <h5>Terpene Profile for {{ batch.strain.name }} by
+                        {{batch.grower.name }} (Harvest Date: {{ batch.harvest_date }})</h5>
                     {{ form.as_p }}
                     <input type="submit" value="Submit" class="btn btn-primary">
                 </form>
