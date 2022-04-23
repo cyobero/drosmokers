@@ -46,7 +46,8 @@ def terpenes_form(request, batch_id):
                                      caryophyllene=form.cleaned_data["caryophyllene"],
                                      myrcene=form.cleaned_data["myrcene"],
                                      humulene=form.cleaned_data["humulene"],
-                                     terpinene=form.cleaned_data["terpinene"])
+                                     terpinene=form.cleaned_data["terpinene"],
+                                     linalool=form.cleaned_data["linalool"])
             profile.save()
 
             messages.success(request, "New terpene profile added!")
