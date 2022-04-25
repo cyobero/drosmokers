@@ -18,7 +18,7 @@ def rating_form(request):
 
 
 def terpenes_view(request, batch_id):
-    terp = TerpeneProfile.objects.filter(id=int(batch_id))
+    terp = TerpeneProfile.objects.filter(batch__id=int(batch_id))
     return render(request, "terpene_profile.html", {"terp": terp, "batch_id": int(batch_id)})
 
 
