@@ -41,7 +41,7 @@ class Batch(models.Model):
 
 
 class TerpeneProfile(models.Model):
-    batch = models.ForeignKey(Batch, on_delete=models.CASCADE)
+    batch = models.OneToOneField(Batch, on_delete=models.CASCADE)
     limonene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
     pinene = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
     caryophyllene = models.DecimalField(
