@@ -1,15 +1,17 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
 
 class Strain(models.Model):
-    family_choices = (
-        ('I', 'Indica'),
-        ('S', 'Sativa'),
-        ('H', 'Hybrid')
-    )
-    family = models.CharField(choices=family_choices, max_length=6)
+
+    class Family(models.TextChoices):
+        INDICA = 'In', _('Indica')
+        SATIVA = 'Sa', _('Sativa'),
+        HYBRID = 'Hy', _('Hybrid')
+
+    family = models.CharField(choices=Family.choices, max_length=6)
     name = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
@@ -27,8 +29,8 @@ class Grower(models.Model):
 class Batch(models.Model):
     strain = models.ForeignKey(Strain, on_delete=models.CASCADE)
     harvest_date = models.DateField()
+    final_test_date = models.DateField()
     package_date = models.DateField()
-    test_date = models.DateField()
     thc_content = models.DecimalField(
         decimal_places=2, max_digits=5, default=0.0)
     cbd_content = models.DecimalField(

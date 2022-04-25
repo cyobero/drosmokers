@@ -63,8 +63,8 @@ def batch_form(request):
         form = BatchForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, "Batch successfully added! image url:%s" %
-                             form.cleaned_data["image"])
+            messages.success(request, "New batch successfully added!")
+            return redirect("success")
         return render(request, "batch_form.html", {"form": form})
     form = BatchForm()
     return render(request, "batch_form.html", {"form": form})

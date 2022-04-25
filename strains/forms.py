@@ -60,14 +60,14 @@ class DateInput(forms.DateInput):
 class BatchForm(ModelForm):
     class Meta:
         model = Batch
-        fields = ["strain", "harvest_date", "package_date", "test_date", "thc_content",
+        fields = ["strain", "harvest_date", "final_test_date", "package_date",  "thc_content",
                   "cbd_content", "grower", "image"]
 
         widgets = {
             "strain": forms.Select(attrs={"class": "form-control"}),
             "harvest_date": DateInput(attrs={"class": "form-control"}),
+            "final_test_date": DateInput(attrs={"class": "form-control"}),
             "package_date": DateInput(attrs={"class": "form-control"}),
-            "test_date": DateInput(attrs={"class": "form-control"}),
             "thc_content": forms.NumberInput(attrs={"class": "form-control"}),
             "cbd_content": forms.NumberInput(attrs={"class": "form-control"}),
             "grower": forms.Select(attrs={"class": "form-control"}),
