@@ -17,16 +17,16 @@
             <h4 class="h4">Terpene Profile for batch ID: {{ batch_id }} does not
                 exist.<br> <small>Create a new one <a href="{% url 'terpenes-form' batch_id=batch_id %}">here</a></small></h4>
             {% else %}
-            <img src="{{ terp.0.get_batch.image.url }}" class="profile-img">
+            <img src="{{ terp.0.batch.image.url }}" class="profile-img">
         </div>
 
         <div class="col-lg-8">
 
             <div class="profile-title">
-                <h2 class="display-2">{{ terp.0.get_batch.strain.name }}</h2>
-                <h5 class="h5"><strong>THC:</strong> {{ terp.0.get_batch.thc_content }}%</h5>
-                <h5 class="h5"><strong>Species:</strong> {{terp.0.get_batch.strain.family }}</h5>
-                <h5 class="h5">{{ terp.0.get_batch.grower.name }}, Harvest Date: {{terp.0.get_batch.harvest_date }}</h5>
+                <h2 class="display-2">{{ terp.0.batch.strain.name }}</h2>
+                <h5 class="h5"><strong>THC:</strong> {{ terp.0.batch.thc_content }}%</h5>
+                <h5 class="h5"><strong>Species:</strong> {{terp.0.batch.strain.family }}</h5>
+                <h5 class="h5">{{ terp.0.batch.grower.name }}, Harvest Date: {{terp.0.batch.harvest_date }}</h5>
             </div>
 
             <div class="terp-profile-table">
