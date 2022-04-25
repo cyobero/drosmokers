@@ -53,6 +53,10 @@ class TerpeneProfileForm(ModelForm):
         }
 
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+
 class BatchForm(ModelForm):
     class Meta:
         model = Batch
@@ -61,9 +65,9 @@ class BatchForm(ModelForm):
 
         widgets = {
             "strain": forms.Select(attrs={"class": "form-control"}),
-            "harvest_date": forms.DateInput(attrs={"class": "form-control"}),
-            "package_date": forms.DateInput(attrs={"class": "form-control"}),
-            "test_date": forms.DateInput(attrs={"class": "form-control"}),
+            "harvest_date": DateInput(attrs={"class": "form-control"}),
+            "package_date": DateInput(attrs={"class": "form-control"}),
+            "test_date": DateInput(attrs={"class": "form-control"}),
             "thc_content": forms.NumberInput(attrs={"class": "form-control"}),
             "cbd_content": forms.NumberInput(attrs={"class": "form-control"}),
             "grower": forms.Select(attrs={"class": "form-control"}),
