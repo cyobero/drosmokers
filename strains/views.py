@@ -28,7 +28,8 @@ def grower_form(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Grower '{}' successfull added".format(
-                form.cleaned_data["grower"]))
+                form.cleaned_data["name"]))
+            return redirect('success')
         return render(request, "grower_form.html", {"form": form})
     form = GrowerForm
     return render(request, "grower_form.html", {"form": form})
