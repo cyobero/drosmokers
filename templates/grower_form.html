@@ -1,20 +1,28 @@
-{% extends 'batch_form.html' %}
+{% extends 'strain_form.html' %}
 {% block title %}New Grower{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-8">
-        <div class="form-container">
-            <form method="post" class="form-inline">{% csrf_token %}
-                <h4 class="form-title">Add Grower</h4>
-                <div class="form-group">
-                {{ form.as_p }}
-                <input type="submit" class="btn btn-primary" value="Submit">
-                </div>
-            </form>
-        </div>
+<div class="form-container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4"></div>
+        <div class="col-sm-2 col-md-8">
+            <div class="form-group">
+                <h4 class="h4">Add New Grower</h4>
 
+                <form method="post">{% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 col-sm-2"></div>
     </div>
 </div>
+
+
 {% endblock %}

@@ -10,13 +10,18 @@ class RatingForm(ModelForm):
         model = Rating
         fields = ["batch", "score"]
 
+        widgets = {
+            'batch': forms.Select(attrs={'class': 'form-control'}),
+            'score': forms.Select(attrs={'class': 'form-control'})
+        }
+
 
 class StrainForm(ModelForm):
     class Meta:
         family_choices = (
-            ('I', 'Indica'),
-            ('S', 'Sativa'),
-            ('H', 'Hybrid')
+            ('Indica', 'Indica'),
+            ('Sativa', 'Sativa'),
+            ('Hybrid', 'Hybrid')
         )
 
         model = Strain
@@ -79,6 +84,12 @@ class GrowerForm(ModelForm):
     class Meta:
         model = Grower
         fields = ["name", "website"]
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'website': forms.TextInput(attrs={'class': 'form-control', 'placeholder':
+                                              '(Optional)'})
+        }
 
     def clean_name(self):
         name = self.cleaned_data["name"].lower()
