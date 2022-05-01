@@ -65,7 +65,7 @@ def batch_form(request):
         if form.is_valid():
             form.save()
             messages.success(request, "New batch successfully added!")
-            return redirect("success")
+            return redirect("terpenes-form", batch_id=form.instance.id)
         return render(request, "batch_form.html", {"form": form})
     form = BatchForm()
     return render(request, "batch_form.html", {"form": form})
