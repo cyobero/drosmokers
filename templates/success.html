@@ -2,14 +2,25 @@
 {% block title %}Success{% endblock %}
 
 {% block styles %}
-<meta http-equiv="refresh" content="3; url='{% url 'index' %}'" />
+<meta http-equiv="refresh" content="1; url='{% url 'index' %}'" />
 {% endblock %}
 
 {% block content %}
-{% if messages %}
-{% for message in messages %}
-<strong>{{message}}</strong>
-{% endfor %}
-{% endif %}
-<h2>Much Success!</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            {% if messages %}
+            {% for message in messages %}
+            <h3 class="display-3"><strong>{{message}}</strong></h3>
+            {% endfor %}
+            {% endif %}
+            <h2>Much Success!</h2>
+            <h2 class="display-2">Redirecting home...</p>
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}
