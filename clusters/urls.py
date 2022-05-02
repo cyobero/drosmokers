@@ -23,7 +23,7 @@ import clusters.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', clusters.views.index_view, name='index'),
+    path('', strains.views.batches_view, name='index'),
     path('new/strain', strains.views.strain_form, name='strain-form'),
     path('batches/', strains.views.batches_view, name='batches'),
     path('new/batch', strains.views.batch_form, name='batch-form'),

@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Drosmokers Home{% endblock %}
 
 {% block styles %}
 {% endblock %}
 
 {% block navbar %}
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Drosmokers</a>
+    <a class="navbar-brand" href="{% url 'batches' %}">Drosmokers</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <li class="nav-item"><a class="nav-item nav-link active" href="{% url 'batches' %}">Batches</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                                              role="button"
