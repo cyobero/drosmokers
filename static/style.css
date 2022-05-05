@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Anybody';
-    background-color: 	#a9ffc4; 
+    background-color: 	#cdebd6;
 }
 
 div.page-title {
@@ -33,7 +33,9 @@ div.card-body button {
 }
 
 nav.navbar.navbar-dark.fixed-top {
-    background-color: #414f5c;
+    background-color: #3d404f;
+    height: 2.5rem;
+    font-size: 16px;
 }
 
 .navbar {
@@ -72,10 +74,19 @@ div.cards-container {
 }
 
 .navbar-nav .dropdown-menu {
-    background-color: #414f5c;
-    color: white;
+    background-color: #3d404f;
+
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
 }
 
 .dropdown-item {
-    color: white;
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .show>.nav-link {
+    color: #ffffff;
 }

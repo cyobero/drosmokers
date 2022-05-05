@@ -1,4 +1,4 @@
-# Dro Smokers
+# Drosmokers
 This is an app that keeps track of the strains I've smoked.
 
 ## Quick Setup

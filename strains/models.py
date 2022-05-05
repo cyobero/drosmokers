@@ -8,7 +8,7 @@ class Strain(models.Model):
 
     class Family(models.TextChoices):
         INDICA = 'In', _('Indica')
-        SATIVA = 'Sa', _('Sativa'),
+        SATIVA = 'Sa', _('Sativa')
         HYBRID = 'Hy', _('Hybrid')
 
     family = models.CharField(choices=Family.choices, max_length=6)
@@ -55,7 +55,7 @@ class TerpeneProfile(models.Model):
     linalool = models.DecimalField(decimal_places=2, max_digits=6, default=0.0)
 
     def get_batch(self):
-        obj = Batch.objects.get(id=self.id)
+        obj = Batch.objects.get(id=self.batch.id)
         return obj
 
 
