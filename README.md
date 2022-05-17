@@ -6,6 +6,6 @@ A Django web application to keep track of the strains you've smoked (a lightweig
 ```git clone https://github.com/cyobero/drosmokers``` 
 
 2. Build the docker container
-```docker-compose up --build .```
+```docker-compose up --build```
 
 If all goes well, then open up a web browser and go to `localhost:8000/`.
