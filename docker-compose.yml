@@ -5,12 +5,14 @@ services:
     image: mysql
     restart: always
     environment:
-      - MYSQL_DATABASE="clusters_db"
+      - MYSQL_USER="dexter"
+      - MYSQL_PASSWORD="password"
+      - MYSQL_DATABASE="drosmokers_db"
       - MYSQL_ROOT_PASSWORD="password"
     volumes:
-      - clusters_vol:/var/lib/mysql/
+      - dev_vol:/var/lib/mysql/
     ports:
-      - 3306:3306
+      - 3305:3306
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -22,4 +24,4 @@ services:
       - db
 
 volumes:
-  clusters_vol:
+  dev_vol:

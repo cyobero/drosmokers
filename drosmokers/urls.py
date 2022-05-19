@@ -1,4 +1,4 @@
-"""clusters URL Configuration
+"""drosmokers URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 import strains.views
-import clusters.views
+import drosmokers.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,7 +33,7 @@ urlpatterns = [
     path('terpenes/<int:batch_id>',
          strains.views.terpenes_view, name='terpene-profile'),
     path('new/rating', strains.views.rating_form, name='rating-form'),
-    path('success/', clusters.views.success_view, name='success'),
+    path('success/', drosmokers.views.success_view, name='success'),
 ]
 
 if settings.DEBUG:
