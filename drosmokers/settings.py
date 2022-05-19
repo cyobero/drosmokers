@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'drosmokers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'drosmokers_db',
+        'NAME': 'drosmokers_test_db',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': 'drosmokers-db-1',
+        'HOST': '172.17.0.1',
         'PORT': 3306
     }
 }
