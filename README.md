@@ -1,10 +1,11 @@
 # Drosmokers
-This is an app that keeps track of the strains I've smoked.
+A Django web application to keep track of the strains you've smoked (a lightweight version of [leafly](https://leafly.com))
 
 ## Quick Setup
-Make sure you have Docker installed. If not, install from [here](https://docs.docker.com/get-docker/).
-Run the following from the command line
+1. Clone the repo
+```git clone https://github.com/cyobero/drosmokers``` 
 
-`docker-compose -d --build`
+2. Build the docker container
+```docker-compose up --build```
 
-If all goes well, then open a web browser and go to `localhost:8008`.
+If all goes well, then open up a web browser and go to `localhost:8000/`.
