@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'drosmokers_test_db',
-        'USER': 'root',
+        'USER': 'dexter',
         'PASSWORD': 'password',
         'HOST': '172.17.0.1',
         'PORT': 3306
