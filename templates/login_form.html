@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4"></div>
+        <div class="col-sm-2 col-md-8">
+            <div class="form-group">
+                <h4 class="h4">Add New Grower</h4>
+
+                <form method="post">{% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>
+                {% if messages %}
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 col-sm-2"></div>
+    </div>
+</div>
+{% endblock %}
