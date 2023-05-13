@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ["drosmokerson.ly", "192.168.0.6", "localhost", "127.0.0.1", "web",
                  "172.17.0.1"]
 
+CSRF_TRUSTED_ORIGINS = ['https://localhost', 'https://127.17.0.1', 'https://172.17.0.1',
+                        'https://web']
+
 
 # Application definition
 

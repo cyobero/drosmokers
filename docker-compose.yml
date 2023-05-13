@@ -13,16 +13,19 @@ services:
       - test_vol:/var/lib/mysql/
     ports:
       - "3306:3306"
+
   web:
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python manage.py migrate && python manage.py runserver web:8000"
     volumes:
     - .:/app
     ports:
       - "8000:8000"
     depends_on:
       - db
+
   nginx:
+    build: ./nginx
     image: nginx:latest
     restart: always
     ports:
