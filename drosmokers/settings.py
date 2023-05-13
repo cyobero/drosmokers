@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-e%g_jnd(76pivke1-=-f&(xj$ltpl0o#$!x@ff5zid$qhs+f82
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["drosmokerson.ly", "192.168.0.6", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["drosmokerson.ly", "192.168.0.6", "localhost", "127.0.0.1", "web",
+                 "172.17.0.1"]
 
 
 # Application definition
@@ -81,7 +82,7 @@ DATABASES = {
         'NAME': 'drosmokers_test_db',
         'USER': 'dexter',
         'PASSWORD': 'password',
-        'HOST': '172.17.0.1',
+        'HOST': 'db',
         'PORT': 3306
     }
 }
